@@ -1,11 +1,9 @@
 import React from 'react';
 import Grid from '@mui/material/Grid2';
 import { Typography, IconButton, Box } from '@mui/material';
-import { Home, Code, YouTube, LinkedIn, Email,Facebook } from '@mui/icons-material';
 // import SVGFin from '{process.env.PUBLIC_URL + '/finn.png'}
 // Example data for favorite links
 const favoriteLinks = [
-  { name: 'Home', icon: <Home />, url: 'https://www.example.com' },
   { name: 'Gmail', icon: <img src={process.env.PUBLIC_URL + '/gmail.png'} />, url: 'https://gmail.com' },
   { name: 'Drive', icon: <img src={process.env.PUBLIC_URL + '/drive.png'} />, url: 'https://drive.google.com/drive/my-drive' },
   { name: 'Drive', icon: <img src={process.env.PUBLIC_URL + '/doc.png'} />, url: 'https://docs.google.com/document/u/0/' },
@@ -54,11 +52,18 @@ const iconContainerStyle = {
   borderRadius: 16,
   backgroundColor: '#f0f0f0',
   boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+
 };
 
 const iconStyle = {
   color: '#000',
   fontSize: 32,
+  '&:hover': {
+    backgroundColor: 'primary.dark',
+    fontSize: 35,
+
+  },
 };
+
 
 export default FavoriteLinks;
