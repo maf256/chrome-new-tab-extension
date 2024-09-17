@@ -1,12 +1,16 @@
 import React from "react";
 import './App.css';
+import Weather from "./components/weather/Weather";
+import FavoriteLinks from "./components/favoritelinks/Favoritelinks";
+import GoogleSearch from "./components/Googlesearch";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Welcome to Your Custom New Tab</h1>
-        <p>Customize this page as you like!</p>
+        <GoogleSearch />
+        <Weather city="Sandvika" />
+        <FavoriteLinks />
       </header>
     </div>
   );
