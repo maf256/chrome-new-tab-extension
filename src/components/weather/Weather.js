@@ -63,7 +63,7 @@ const Weather = ({ city = "Oslo" }) => {
   const { main, weather, name } = weatherData;
 
   return (
-    <Card sx={{ maxWidth: 300, margin: '20px auto', textAlign: 'center' }}>
+    <Card sx={{ maxWidth: 300, margin: '5px', textAlign: 'center' }}>
       <CardContent>
         <Typography variant="h4">{name}</Typography>
         <Typography variant="h6">{weather[0].description}</Typography>
