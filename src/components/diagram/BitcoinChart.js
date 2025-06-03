@@ -57,7 +57,7 @@ function BitcoinChart({ days = 30 }) {
   // ---------------------------------------------------------------------------
 
   const ChartBody = () => (
-    <ResponsiveContainer width="100%" height={800} minHeight={300} minWidth={1000}>
+    <ResponsiveContainer width="100%" height={800} minHeight={300} minWidth={900}>
       <LineChart data={data} margin={{ top: 16, right: 16, left: 0, bottom: 0 }}>
         <Line type="monotone" dataKey="price" strokeWidth={2} dot={false} />
         <CartesianGrid strokeDasharray="3 3" />
