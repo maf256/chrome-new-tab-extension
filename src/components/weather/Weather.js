@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { Card, CardContent, Typography, CircularProgress } from '@mui/material';
 import { WiDaySunny, WiCloudy, WiRain, WiSnow, WiThunderstorm } from 'react-icons/wi';
@@ -11,18 +11,22 @@ const Weather = ({ city = "Oslo" }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const fetchWeatherData = async () => {
+  const fetchWeatherData = useCallback(async () => {
     try {
-      const response = await axios.get(
+      const { data } = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
       );
-      setWeatherData(response.data);
+      setWeatherData(data);
       setLoading(false);
-    } catch (error) {
-      setError("Could not fetch weather data");
+    } catch {
+      setError('Could not fetch weather data');
       setLoading(false);
     }
-  };
+  }, [city]);
+
+  useEffect(() => {
+    fetchWeatherData();
+  }, [fetchWeatherData]); 
 
   useEffect(() => {
     fetchWeatherData();
